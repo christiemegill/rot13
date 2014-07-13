@@ -4,8 +4,6 @@
 <html>
 <body>
    
-	<button type="button" class="btn btn-primary">Encode/Decode</button>
-
 	<form role="form">
 	  <div class="form-group">
 	    <label for="inputField">Input Field</label>
@@ -14,24 +12,52 @@
 	  <button type="submit" class="btn btn-default">Submit</button>
 	</form>
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<form role="form">
+	  <div class="form-group">
+	    <label for="outputField">Output Field</label>
+	    <input type="text" class="form-control" id="OutputField" placeholder="Output text">
+	  </div>
+	</form>
+
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>	
 
-$( "form" ).submit(function( event ) {
-if ( $( "input:first" ).val() === "correct" ) {
-$( "span" ).text( "Validated..." ).show();
-return;
-  }
+	$(document).ready(function(){
 
-  	<div id="result">
-	$("div").html(result)
-	$("#result").html(answer)
-	$ echo "result" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-	</div>
+			//what happens what button is clicked 
+		$('#inputField').click(function() {
+		$('#inputField').submit(function() {
+    		// get input from user/button. put these into an array 'inputs'
+    	var $inputs = $('#inputField :input');
+    		//gets input and splits each string down to letter 
+       	var res = str.split('');
+
+       		//pass letters into function rot
+       	function rot(res) {
+       		for (i = 0; i < res.length; i++) {
+        var x = res.charAt(i); var y = res.charAt((i + 13) % 26)
+        map[x] = y; map[x.toUpperCase()] = y.toUpperCase()
+    };
+
+    for (i = 0; i < txt.length; i++) {
+        var c = txt.charAt(i);
+        buf += (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' ? map[c] : c)
+    };
+    	//output result 
+    	$( "p" )
+  		.append( $( "res" ).map(function() {
+    	return $( this ).val();
+  			})
+    	
+	});
+	});
+
 
 </script>
 
 </body>
 </html>
+
+
 
