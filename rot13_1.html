@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>    
+
+    $(document).ready(function(){
+    String.prototype.rotate = function(x){
+    var a = x % this.length, 
+        b = a > 0 ? this.length - x : -x, 
+        c = this.substr(b,this.length), 
+        d = this.substr(0,b); 
+    return c + d; 
+};
+function ROT13() {
+    var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 
+        keys = (a+a.toLowerCase()).split(''), 
+        vals = (a.rotate(13) + a.toLowerCase().rotate(13)).split(""), 
+        rot13_dict = {}; 
+    keys.forEach(function(i,j){ 
+        rot13_dict[i] = vals[j];
+    },
+    this.rot13_map = function(y){
+        return rot13_dict[y] || y;
+    },
+    this.rot13 = function(z){
+        return z.split('').map(rot13_map).join('');
+    });
+}
+var rot13_obj = new ROT13();
+rot13_obj.rot13("Testing");
+
+
+</script>
+
+</body>
+</html>
