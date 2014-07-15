@@ -26,7 +26,7 @@
 	$(document).ready(function(){
 
 			//what happens what button is clicked 
-		$('#inputField').click(function() {
+
 		$('#inputField').submit(function() {
     		// get input from user/button. put these into an array 'inputs'
     	var $inputs = $('#inputField :input');
@@ -44,9 +44,16 @@
         var c = txt.charAt(i);
         buf += (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' ? map[c] : c)
     };
+
+     
     	//output result 
-    	$( "p" )
-  		.append( $( "res" ).map(function() {
+      var mapArray = $.makeArray( inputs )
+      jQuery.map( mapArray)
+
+      var userInput = $('#inputField :input').val('')
+
+      <div id="div">
+      $('div').apppend(text() {
     	return $( this ).val();
   			})
     	
